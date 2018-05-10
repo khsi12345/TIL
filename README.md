@@ -1,5 +1,5 @@
 # TIL
-Today I Learned
-edit text
-everyday fighting!!
+1. 오늘 배운 것 꼭 복습하기.
+2. 복습 내용은 최대한 자세하게 작성하면서 공부하기.
+3. 매일매일 꾸준히 하기.
 
