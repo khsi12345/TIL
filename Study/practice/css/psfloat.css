@@ -1,0 +1,66 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  font-size: 20px;
+  margin: 0;
+}
+.wrapper{
+  background-color: yellow;
+}
+.header, .visual, .main, .slogan, .footer{
+  width: 940px;
+  margin: 0 auto;
+  /* margin: 0 auto 같이 2개 값일 때는 왼쪽 값은 top,bottom 오른쪽 값은 left,right 적용 */
+}
+.header{
+  background-color: pink;
+  height: 10vh;
+}
+
+.visual{
+  background: lime;
+  height: 10vh;
+ 
+}
+
+.main{
+  background-color: skyblue;
+  height: 10vh;
+  padding: 100 50000px; 
+}
+
+.group{
+
+}
+
+.group1{
+  background-color: rgba(255,255,255,.5);
+  width: 250px;
+  float: left;
+}
+.group2{
+  background-color: hsla(120,20%,60%,.5); /*마지막에는 투명도를 설정한다.*/
+  width: 380px;
+  
+}
+.group3{
+  background-color: tomato;
+  width: 189px;
+
+}
+
+
+.slogan{
+  background-color: blueviolet;
+  height: 10vh;
+}
+
+.footer-bg{
+  background-color: orange;
+}
+
+.footer{
+  background-color: silver;
+  height: 10vh;
+}
