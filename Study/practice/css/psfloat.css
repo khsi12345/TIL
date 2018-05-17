@@ -1,9 +1,22 @@
+@import url("normalize.css");
 *{
   box-sizing: border-box;
 }
 body{
   font-size: 20px;
+}
+h2{
+  background-color: blue;
+  /* margin: 0; */
+}
+ul{
   margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+  
 }
 .wrapper{
   background-color: yellow;
@@ -15,12 +28,40 @@ body{
 }
 .header{
   background-color: pink;
-  height: 10vh;
+  position: relative;
+  padding: 0 30px;
+  
 }
-
+.logo{
+  position: absolute;
+  top: 45px;
+  left: 65px;
+}
+.member{
+  
+  padding: 10px 0;
+  float: right;
+  
+}
+.member li{
+  float: left;
+  position: absolute;
+  background-color: green;
+}
+.member a{
+  padding: 5px 10px;
+}
+.readable-hidden{
+  position: absolute;
+  left: -2000px;
+}
+.navigation{
+  clear: both;
+}
 .visual{
   background: lime;
   height: 10vh;
+  
  
 }
 
