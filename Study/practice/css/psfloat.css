@@ -32,9 +32,9 @@ a{
   
 }
 .wrapper{
-  background-color: yellow;
   background-image: url("images/bg_flower.png");
-  background-repeat: 50% 0;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
    /*배경은 고정이고 콘텐츠만 움직인다.*/
   background-attachment: fixed;
 }
@@ -59,7 +59,7 @@ a{
   background-color: orange;
   /* position: relative; */
   /* float: left; */
-  margin-left: 225px;
+  padding-left: 225px;
   height: 47px;
  border-top: 2px solid #000;
  border-radius: 0 0 5px 5px;
@@ -154,24 +154,83 @@ margin-right: 10px;
   display: none;
   left: 0;
 }
-
-
+/* 비주얼 클래스에서 텍스트가 움직이는 애니메이션 */
+@keyframes textAni{
+  0%{
+    /* 텍스트 색상(색,색,색,투명도(투명) */
+    color: rgba(0, 0, 0, 0);
+    font-size: 12px;
+    /* 텍스트 이동 좌표*/
+    transform: translate(0,0);
+  }
+  100%{
+    /* 텍스트 색상(색,색,색,투명도(불투명) */
+    color: rgba(0, 0, 0, 1);
+    font-size: 24px;
+    /* 텍스트 이동 좌표 */
+    transform: translate(400px,75px);
+  }
+}
+/* 비주얼에 가짜 클래스 만들어서 꽃 이미지 애니메이션 */
+@keyframes flowerAni{
+  0%{
+    /* 박스 유지(박스가 화면에 보인다.) */
+    opacity: 1;
+  }
+  100%{
+    /* 박스 투명(박스가 화면에 안보인다.) */
+    opacity: 0;
+  }
+}
 .visual{
-  background: lime;
-  height: 10vh;
+  height: 120px;
+  position: relative;
   
- 
+}
+.visual::before, .visual::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.visual::before{
+  background-image: url("images/ani_flower_01.png"),url("images/ani_flower_03.png");
+  background-repeat: no-repeat;
+  background-position: -10px -10px, 670px 20px;
+  animation-name: flowerAni;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.visual::after{
+  background-image: url("images/ani_flower_02.png"), url("images/ani_flower_04.png");
+  background-repeat: no-repeat;
+  background-position: 300px 0, 800px 0;
+  animation-name: flowerAni;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.visual-text{
+  position: absolute;
+  animation-name: textAni;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .main{
   background-color: skyblue;
-  height: 10vh;
-  padding: 100px 100px; 
+  border-radius: 15px 15px 0 0;
+  padding: 30px 15px; 
 }
 
-/* .group{
-
-} */
+.group{
+  height: 30vh;
+  float: left;
+  margin: 0 15px;
+}
 
 .group1{
   background-color: rgba(255,255,255,.5);
@@ -181,12 +240,18 @@ margin-right: 10px;
 .group2{
   background-color: hsla(120,20%,60%,.5); /*마지막에는 투명도를 설정한다.*/
   width: 380px;
-  
+
 }
 .group3{
   background-color: tomato;
   width: 189px;
-
+  
+}
+.clearfix::after{
+  content: "";
+  display: block;
+  background-color: #000;
+  clear: both;
 }
 
 
