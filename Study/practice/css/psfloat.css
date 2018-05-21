@@ -183,9 +183,8 @@ margin-right: 10px;
   }
 }
 .visual{
-  height: 120px;
   position: relative;
-  
+  height: 120px;
 }
 .visual::before, .visual::after{
   content: "";
@@ -227,7 +226,6 @@ margin-right: 10px;
 }
 
 .group{
-  height: 30vh;
   float: left;
   margin: 0 15px;
 }
@@ -235,10 +233,12 @@ margin-right: 10px;
 .group1{
   width: 250px;
 }
+/* 로그인 */
 .login{
 background-color: orange;
 padding: 10px;
 border-radius: 5px;
+box-shadow: 5px 5px 0 0 #aaa;
 }
 .login-head{
   color: ivory;
@@ -297,11 +297,12 @@ border-radius: 5px;
   border: 0;
   color: #FFF;
   background-color: orange;
+  border-radius: 5px;
 }
 .login-member{
   background-color: #FFF;
   border-radius: 0 0 5px 5px;
-  padding: 10px;
+  padding: 10px 10px 20px 10px;
 }
 .login-member li{
   letter-spacing:  -1px;
@@ -315,7 +316,50 @@ border-radius: 5px;
 .login-member a{
   padding: 5px 0;
 }
-
+/* 유효성 검사 배너 */
+.validation-list{
+  margin-top: 25px;
+}
+.validation-list li{
+  margin: 10px 0;
+}
+.validation-list a{
+  display: block;
+  line-height: 30px;
+  border: 1px solid #aaa;
+  border-radius: 30px;
+  background: url("images/validation_icon.png") no-repeat 15px 50%, linear-gradient(to bottom, #eee, #ccc);
+  background-color: #ccc;
+  padding-left: 45px;
+}
+/* 웹 관련 용어 */
+.term{
+  padding: 20px 16px;
+  height: 152px;
+  border: 1px solid #aaa;
+  background: linear-gradient(to bottom, #eee, #aaa);
+  border-radius: 7px;
+}
+.term-heading{
+  margin: 0;
+  padding-bottom: 20px;
+}
+.term-list{
+  margin: 0;
+}
+.term-list-subject{
+  display: flex;
+  justify-content: center;
+  display: inline-block;
+}
+.term-list-thumbnail{
+  float: left;
+  margin: 0;
+  padding-right: 14px;
+}
+.term-list-tutorial{
+  padding-top: 10px; 
+}
 .group2{
   background-color: hsla(120,20%,60%,.5); /*마지막에는 투명도를 설정한다.*/
   width: 380px;
@@ -337,6 +381,7 @@ border-radius: 5px;
 .slogan{
   background-color: blueviolet;
   height: 10vh;
+  clear: both;
 }
 
 .footer-bg{
