@@ -17,10 +17,10 @@ h1{
   margin: 0;
   padding: 0;
 }
-h2{
-  /* background-color: blue; */
-  /* margin: 0; */
-}
+/* h2{
+  background-color: blue;
+  margin: 0;
+} */
 ul{
   margin: 0;
   padding: 0;
@@ -361,9 +361,28 @@ box-shadow: 5px 5px 0 0 #aaa;
   padding-top: 10px; 
 }
 .group2{
-  background-color: hsla(120,20%,60%,.5); /*마지막에는 투명도를 설정한다.*/
+  /* 마지막에는 투명도를 설정한다. */
+  /* background-color: hsla(120,20%,60%,.5); */
   width: 380px;
 
+}
+/* 자료 검색 */
+.search-form fieldset{
+  border: 1px solid #aaa;
+  border-bottom: 0;
+  background: linear-gradient(to bottom, #aaa, #eee);
+  display: inline-block;
+  height: 52px;
+  padding: 20px 26px 10px;
+  border-radius: 5px 5px 0 0;
+}
+.ipt-search{
+  width: 200px;
+  margin: 0 10px 0;
+}
+.btn-search{
+  background: linear-gradient(to bottom, #ccc, #181818);
+  color: #fff;
 }
 .group3{
   background-color: tomato;
