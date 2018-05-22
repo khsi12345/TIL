@@ -220,7 +220,7 @@ margin-right: 10px;
 }
 
 .main{
-  background-color: skyblue;
+  /* background-color: skyblue; */
   border-radius: 15px 15px 0 0;
   padding: 30px 15px; 
 }
@@ -383,6 +383,47 @@ box-shadow: 5px 5px 0 0 #aaa;
 .btn-search{
   background: linear-gradient(to bottom, #ccc, #181818);
   color: #fff;
+}
+/* 게시판 */
+.border{
+  /* background-color:blue; */
+  position: relative;
+  margin-top: 20px;
+}
+.notice-heading.tab, .pds-heading.tab{
+  margin: 0;
+  position: absolute;
+  background: linear-gradient(to bottom, #eee, #ccc);
+  border-radius: 5px 5px 0 0;
+  border: 1px solid #aaa;
+  font: inherit;
+  width: 82px;
+  height: 28px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+}
+.pds-heading.tab{
+  top: 0; 
+  left: 82px;
+}
+.notice-list{
+  /* background-color: yellow; */
+  padding-top: 40px;
+}
+.notice-list li, .pds-list li{
+  display: flex;
+  justify-content: space-between;
+  line-height: 35px;
+}
+.notice-more{
+  position: absolute;
+  font-size: 16px;
+  top: 0;
+  right: 0;
+}
+.pds-list, .pds-more{
+  display: none;
 }
 .group3{
   background-color: tomato;
