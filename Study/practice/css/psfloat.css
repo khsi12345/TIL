@@ -1,3 +1,4 @@
+@charset "utf-8";
 @import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
 @import url("normalize.css");
 
@@ -243,7 +244,7 @@ box-shadow: 5px 5px 0 0 #aaa;
 .login-head{
   color: ivory;
   font-size: 1.6rem;
-  font-weight: 700px;
+  font-weight: 700;
   margin: 0 0 10px 10px;
 }
 .login-form{
@@ -343,6 +344,7 @@ box-shadow: 5px 5px 0 0 #aaa;
 .term-heading{
   margin: 0;
   padding-bottom: 20px;
+  font-size: 1.5rem;
 }
 .term-list{
   margin: 0;
@@ -385,48 +387,109 @@ box-shadow: 5px 5px 0 0 #aaa;
   color: #fff;
 }
 /* 게시판 */
-.border{
-  /* background-color:blue; */
+.bord{
+  /* background:blue; */
   position: relative;
   margin-top: 20px;
 }
 .notice-heading.tab, .pds-heading.tab{
-  margin: 0;
-  position: absolute;
-  background: linear-gradient(to bottom, #eee, #ccc);
-  border-radius: 5px 5px 0 0;
   border: 1px solid #aaa;
-  font: inherit;
-  width: 82px;
-  height: 28px;
-  text-align: center;
-  line-height: 30px;
+  border-radius: 5px 5px 0 0;
+  background: linear-gradient(to bottom, #eee, #ccc);
+  background: #ccc;
+  color: #666;
+  font-size: 1.4rem;
+  font-weight: 400;
+  padding: 5px 10px;
+  position: absolute;
+  top: 0;
   cursor: pointer;
+  margin: 0;
 }
-.pds-heading.tab{
-  top: 0; 
-  left: 82px;
+.pds-heading{
+  left: 73px;
 }
-.notice-list{
+.is-act .tab{
+  background: #fff;
+  border-color: #ce5327 #ce5327 #fff #ce5327;
+  color: #ce5327;
+}
+.notice-list, .pds-list{
   /* background-color: yellow; */
   padding-top: 40px;
 }
 .notice-list li, .pds-list li{
   display: flex;
   justify-content: space-between;
-  line-height: 35px;
+  margin-bottom: 10px;
 }
-.notice-more{
+.notice-list a, .pds-list a{
+  width: calc(100% - 105px);
+  /* 콘텐츠가 박스 사이즈를 넘어가면 넘어간 부분을 자른다 */
+  overflow: hidden;
+  /* 줄바꿈을 하지 않는다.*/
+  white-space: nowrap;
+  /* 텍스트가 오버되면 ....처리 한다. */
+  text-overflow: ellipsis;
+}
+.notice-more, .pds-more{
   position: absolute;
   font-size: 16px;
   top: 0;
   right: 0;
 }
-.pds-list, .pds-more{
+
+.notice-list, .notice-more, .pds-list, .pds-more{
   display: none;
 }
+.is-act .notice-list, .is-act .notice-more, .is-act .pds-list, .is-act .pds-more{
+  display: block;
+}
+/* 새소식 */
+.news{
+  position: relative;
+  margin-top: 20px;
+}
+.news::before{
+  content: "";
+  position: absolute;
+  background: linear-gradient(to right, #ccc, #eee);
+  height: 1px;
+  width: 80%;
+  top: 30px;
+}
+.news-heading{
+  color: #ce5327;
+  font-size: 1.5rem;
+  margin: 0;
+}
+.news-item{
+  position: relative;
+  padding-left: 130px;
+  margin-top: 35px;
+} 
+.news-item-heading{
+  font-size: 1.4rem;
+  margin-bottom: 0;
+}
+.news-item-thumbnail{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  text-align: center;
+}
+.news-item-thumbnail img{
+  margin-bottom: 15px;
+  box-shadow: 0 10px 15px 5px #aaa; 
+}
+.news-more{
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
+}
 .group3{
-  background-color: tomato;
   width: 189px;
   
 }
