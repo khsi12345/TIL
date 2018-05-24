@@ -499,8 +499,152 @@ box-shadow: 5px 5px 0 0 #aaa;
   background-color: #000;
   clear: both;
 }
+/* 신규 이벤트 및 관련 사이트 */
 
+.event-related{
+  position: relative;
+  padding: 10px 10px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, #eee, #ccc);
+}
+.event{
+  position: relative;
+  border-bottom: 1px solid #aaa;
+}
+.event-heading{
+  font-size: 1.6rem;
+  margin: 0;
+}
+.event-heading, .related-heading span{
+  color: #ce5327;
+}
+.event-thumbnail{
+  /* border: 1px solid #ccc; */
+  display: inline-block;
+  box-shadow: 5px 5px 0 0 #aaa;
+  margin: 10px 0;
+}
+.event-brief{
+  margin: 10px 0;
+}
+.related{
+  margin-top: 10px;
+}
+.related-heading{
+  margin: 0;
+  font-size: 1.6rem;
+}
+.related-list{
+  margin-top: 10px;
+  height: 25px;
+  overflow: hidden;
+  background-color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  transition-property: all;
+  transition-duration: 1s;
+  
+}
+.related-list a{
+  display: block;
+  line-height: 25px;
+  text-indent: 15px;
+}
+/* :hover는 가짜 클래스 마우스를 올려놓았을때 효과를 줄 수 있다. */
+.related-list:hover{
+  height: 140px;
+  padding: 10px 0;
+}
+.btn-event{
+  padding: 2px;
+  height: 22px;
+  position: absolute;
+  top: -1px;
+  right: 0;
+  overflow: hidden;
+}
+.btn-event-prev, .btn-event-next{
+  border: 0;
+  width: 20px;
+  padding: 0;
+  white-space: nowrap;
+  /* 박스 안에 남아있는 텍스트를 들여쓰기로 안보이게 한다. */
+  text-indent: 50px;
+  /* 박스 넘어가는 텍스트를 자른다. */
+  background-image: url("images/back_forward.png");
+  background-repeat: no-repeat;
+}
+.btn-event-next{
+  background-position: 100% 0;
+}
+/* 인기 사이트 */
+.favorite{
+  position: relative;
+  margin-top: 20px;
+  background: linear-gradient(to bottom, #eee, #ccc);
+  background-color: #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+.favorite-heading{
+  font-size: 1.5rem;
+  margin: 0;
+}
+.favorite-heading span{
+  color: #ce5327;
+}
+.favorite-list{
+  margin: 5px 0 0 0;
+  padding: 0;
+  overflow: hidden;
+  counter-reset: number;
+}
+.favorite-list li{
+  margin: 5px 0;
+  counter-increment: number;
+  /* line-height: 30px; */
+}
+.favorite-list li::before{
+  content: counter(number);
+  float: left;
+  margin-right: 5px;
+  color: #fff;
+  background-color: #aaa;
+  padding: 0 5px;
+  border-radius: 4px;
+}
+.favorite-list a{
+  float: left;
 
+}
+.favorite-list em{
+  float: right;
+  /* transform: translateY(10%); */
+}
+.favorite-more{
+  position: absolute;
+  padding: 4px;
+  top: 6px;
+  right: 6px;
+}
+.up, .down, .stop{
+  width: 9px;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: url("images/rank.png");
+  background-repeat: no-repeat;
+  text-indent: 20px;
+  margin-top: 2%;
+}
+.down{
+  background-position: 0 100%;
+  margin-top: -1% !important;
+}
+.stop{
+  background-position: 0 50%;
+  margin-top: 1% !important;
+}
 .slogan{
   background-color: blueviolet;
   height: 10vh;
