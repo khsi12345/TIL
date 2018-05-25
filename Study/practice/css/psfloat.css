@@ -33,7 +33,7 @@ a{
   
 }
 .wrapper{
-  background-image: url("images/bg_flower.png");
+  background-image: url("images/bg_flower.png"), linear-gradient(to bottom, #aaa 0%, white 50%, white 100%);
   background-position: 50% 0;
   background-repeat: no-repeat;
    /*배경은 고정이고 콘텐츠만 움직인다.*/
@@ -221,7 +221,7 @@ margin-right: 10px;
 }
 
 .main{
-  /* background-color: skyblue; */
+  background-color: #fff;
   border-radius: 15px 15px 0 0;
   padding: 30px 15px; 
 }
@@ -645,17 +645,80 @@ box-shadow: 5px 5px 0 0 #aaa;
   background-position: 0 50%;
   margin-top: 1% !important;
 }
+/* 슬로건 */
 .slogan{
-  background-color: blueviolet;
-  height: 10vh;
-  clear: both;
+  
+  padding: 0px 100px 0px 180px;
+  position: relative;
 }
-
+.slogan-heading{
+  position: absolute;
+  padding-left: 10px;
+  left: 35px;
+  bottom: -45px;
+  text-align: center;
+  height: 83px;
+  width: 110px;
+  font-size: 1em;
+  line-height: 83px;
+}
+.slogan::after{
+  content: "";
+  clear: both;
+  display: block;
+}
+.slogan-heading::after{
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url("/css/images/coffee.png ");
+  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+}
+.slogan-content{
+  font-size: 1.5rem;
+  color: #987633;
+}
+.slogan-content::before{
+  content: "";
+  font-size: 3rem;
+}
+.slogan-content::after{
+  content: "";
+  font-size: 3rem;
+}
 .footer-bg{
-  background-color: orange;
+  background: linear-gradient(to bottom, #aaa 0%, #ccc 25%,  white 100%);
 }
 
 .footer{
-  background-color: silver;
-  height: 10vh;
+  padding: 10px 100px 10px 160px;
+  position: relative;
+}
+.footer-logo{
+  position: absolute;
+  top: 35px;
+  left: 35px;
+}
+.guide{
+  display: flex;
+  justify-content: space-around;
+  background-color: #aaa;
+  border-radius: 4px;
+  padding: 10px; 
+}
+.guide a{
+  color: #fff;
+}
+.address{
+  margin-top: 10px;
+  font-style: normal;
+}
+.badge{
+  position: absolute;
+  top: 10px;
+  right: 0;
 }
