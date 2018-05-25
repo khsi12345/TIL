@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>반응형 콘텐츠</title>
+  <style>
+    .rwd-container{
+      width: 50%;
+      border: 10px solid #000;
+      margin: 0;
+      box-sizing: border-box;
+      float: left;
+    }
+    .rwd-image, .rwd-media{
+      /* 최대 width가 100%  */
+      max-width: 100%;
+      /* height: auto; */
+    }
+  </style>
+</head>
+<body>
+  <div class="rwd-container">
+    <img src="../images/small.jpg" alt="" class="rwd-image">
+  </div>
+
+  <figure class="rwd-container">
+    <!--콘텐츠가 비디오 객체 controls는 비디오를 컨트롤 할 수 있는 박스를 제공한다.-->
+    <video controls class="rwd-media">
+      <!-- 브라우저에서 지원하지 않는 확장자를 위한 여러 확장자 설정 -->
+      <source src="../media/Google Developer Stories.mp4">
+      <source src="../media/Google Developer Stories.mov">
+      <source src="../media/Google Developer Stories.ogg">
+        <!-- 자막 -->
+       <track src="../media/stories-en.vtt" kind="captions" srclang="en" label="English Caption">
+    </video>
+  </figure>
+</body>
+</html>

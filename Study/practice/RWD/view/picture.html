@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .rwd-container{
+      width: 100%;
+    }
+    .picture{
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="rwd-container">
+  <picture>
+    <source srcset="../images/large.jpg" media="(min-width: 1200px)">
+    <source srcset="../images/medium.jpg" media="(min-width: 480px) and (max-width: 1199px)">
+    <source srcset="../images/small.jpg" media="(max-width: 479px)">
+    <img class="picture" src="../images/normal.jpg" alr="picture demo" width="500" height="350">
+  </picture>
+</div>
+</body>
+</html>

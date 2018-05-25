@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <!-- 반응형 할때 메타는 기본이다. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>미디어 쿼리</title>
+  <style>
+    body{
+      margin: 0;
+    }
+    /* 모바일과 데스크탑 같은 색 */
+    .wrapper{
+      background: silver;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .header{
+      background: yellow;
+    }
+    .nav{
+      background: orange;
+    }
+    .main{
+      background: pink;
+    }
+    .add{
+      background: lime;
+    }
+    .footer{
+      background: skyblue;
+    }
+    
+    /* 0에서 1399까지 */
+    @media screen and (max-width: 1399px){
+      /* 768px이 되면 마진으로 좌우 오토 값을 준다.  */
+      .wrapper{
+        max-width: 768px;
+        margin: 0 auto;
+      }
+      .header, .nav, .main, .ad, .footer{
+        /* max-width 768px == width: 100% */
+        width: 100%;
+      position: sticky;
+      top: 0;
+      left: 0;
+    }
+    .header, .nav, .footer{
+      height: 100vh;
+    }
+    .header{
+      order: -2;
+    }
+    .nav{
+      /* 포지션 픽스: 화면에 보이는 뷰 포트 기분 */
+      /* position: fixed; */
+      top: 0;
+      left: 0;
+      order: -3;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .main{
+      height: 100vh;
+    }
+    .ad{
+      height: 100vh;
+      order: -1;
+    }
+   
+}
+
+    /* 1400px부터~ */
+    @media screen and (min-width: 1400px){
+      .wrapper{
+        width: 1400px;
+        margin: 0 auto;
+      }
+      .header, .nav, .footer{
+        width: 100%;
+        height: 100px;
+      }
+      .main{
+        width: 1000px;
+        height: 500px;
+        order: 1;
+      }
+      .ad{
+        width: 400px;
+        height: 500px;
+       
+      }
+      .footer{
+        order: 1;
+      }
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header"> 헤더 </header>
+    <nav class="nav">네비게이션</nav>
+    <madin class="main">메인 콘텐츠</madin>
+    <!--  -->
+    <aside class="ad">광고</aside>
+    <footer class="footer">푸터</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>반응형 iFrame 콘텐츠</title>
+ <style>
+   .rwd-iframe-wrapper{
+     height: 0 !important;
+     position: relative;
+     width: 100%;
+     padding-top: calc(9/16 * 100%);
+   }
+
+   
+   .rwd-container{
+     /* 부모 body의 width 50% */
+     width: 50%;
+     border: 10px solid #000;
+    
+   }
+   .rwd-iframe{
+     max-width: 100%;
+     /* min-height: 100%; */
+     height: auto;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     
+   }
+ </style>
+</head>
+<body>
+ <div class="rwd-container">
+   <div class="rwd-iframe-wrapper">
+     <!-- iframe은 다른 곳에 있는 소스를 가져와서 바디에 띄어준다. -->
+     <iframe class="rwd-iframe"src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d25309.27255375981!2d127.05105482951413!3d37.53953324476599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sko!2skr!4v1527223487939" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+     <!-- <iframe class="rwd-iframe"  src="https://www.youtube.com/embed/BkqYCPHc8B8"
+
+     frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+     </iframe> -->
+    </div>
+    </div>
+</body>
+</html>
