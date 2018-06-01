@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,26 +8,38 @@
   <title>Facebook Messenger</title>
   <!-- 웹 탭에서 웹 제목 옆에 조그만 아이콘 -->
   <link rel="shortcut icon" href="https://static.xx.fbcdn.net/rsrc.php/y7/r/O6n_HQxozp9.ico">
+  <!-- css파일 지정 -->
+  <link rel="stylesheet" href="css/facebookmessenger.css">
 </head>
+
 <body>
   <div class="wrapper">
+    <div class="group1-wrapper">
     <div class="group1">
-      <header class="Messenger">
-        <h1 class="Messenger">Messenger</h1>
-        <img clas="logo" src="https://static.xx.fbcdn.net/rsrc.php/y7/r/O6n_HQxozp9.ico" alt="페이스북 메신저 아이콘">
-        <p>소중한 사람들과 실시간으로 연락을 주고 받으세요.</p>
-      </header>
-      <section class="login">
-        <p>시작하려면 facebook에 로그인하세요.</p>
-        <form class="login-form" action="#" method="POST">
-          <fieldset>
-          <input type="text" class="user-email" name="user-ID" placeholder="이메일 또는 전화번호를 입력하세요."  required>
-          <input type="password" class="user-password" name="user-PW" placeholder="비밀번호를 입력하세요. required">
-          <button class="login-bt" type="submit">로그인</button> 
+      <div class="group1-left">
+        <header class="messenger-wrapper">
+          <h1 class="messenger">Messenger</h1>
+          <div class="logo-wrapper">
+          <img class="logo" src="https://static.xx.fbcdn.net/rsrc.php/v3/y4/r/2PivRVKESq2.png" alt="페이스북 메신저 아이콘">
+        </div>
+          <p>소중한 사람들과 실시간으로 연락을 주고 받으세요.</p>
+        </header>
+        <section class="login">
+          <p>시작하려면 facebook에 로그인하세요.</p>
+          <form class="login-form" action="#" method="POST">
+            <fieldset>
+              <input type="text" class="user-email" name="user-ID" placeholder="이메일 또는 전화번호를 입력하세요." required>
+              <input type="password" class="user-password" name="user-PW" placeholder="비밀번호를 입력하세요." required>
+              <button class="login-btn " type="submit ">로그인</button> 
         </fieldset>
         </form>
       </section>
     </div>
+    <div class="image-wrapper">
+      <img src="https://static.xx.fbcdn.net/rsrc.php/v3/y6/r/l0Z-vh62zV6.png" alt="facebook messenger image" class="image">
+    </div>
+    </div>
+  </div>
   </div>
   
 </body>
