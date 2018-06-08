@@ -106,6 +106,7 @@
 //     }
 
 //     return number;
+// }
 // };
 
 // console.log(numJewelsInStones('aA', 'aAAbbbb'));
@@ -142,6 +143,7 @@
     
 //   }  
 //   return sum+numbers;
+
 // }
 // console.log(hidenNumbers('01033334444'));
 
@@ -212,7 +214,7 @@
 // // console.log(numPY(''));        // true
 // console.log(numPY());          // true
 
-18.
+// 18.
 
 // function toWeirdCase(s) {
 
@@ -237,69 +239,106 @@
 // }
 // console.log(toWeirdCase('hello world'));    // 'HeLlO WoRlD'
 
-19.
-/**
- * @param {string} s
- * @return {string}
- */
-var reverseWords = function(s) {
-    var str = s.split(' ');
-    var str1 = '';
-    var str2 = ' ';
-    for(var i = 0; i < str.length; i++){
+// 19.
+// /**
+//  * @param {string} s
+//  * @return {string}
+//  */
+// var reverseWords = function(s) {
+//     var str = s.split(' ');
+//     var str1 = '';
+//     var str2 = ' ';
+//     for(var i = 0; i < str.length; i++){
       
-        str1 += str[i].split('').reverse().join('');
-        str1 += str2;
-    }
-      return str1.trim();
-  }
-console.log(reverseWords("Let's take LeetCode contest"));
+//         str1 += str[i].split('').reverse().join('');
+//         str1 += str2;
+//     }
+//       return str1.trim();
+//   }
+// console.log(reverseWords("Let's take LeetCode contest"));
 
+20. 
+// function strToInt(str){
+    
+//     return parseInt(str);
+//     // return +str;
 
+// }
+// console.log(strToInt('1234'));
+// console.log(strToInt('-1234'));
 
+21.
+// function nextSqaure(n){
 
+//     var res;
+//     var number = Math.sqrt(n);
+//     Number.isInteger(number)
 
+//     if(Number.isInteger(number)){
+//         res = Math.pow(number+1, 2);
+//     }
+//     else{
+//         res ='no';
+//     }
+//     return res;
+//     // if(Math.sqrt(n)){
+//     //     return Math.pow(number+1, 2);
+//     // }
+//     // else if(!Math.pow(number) ){
+        
+//     //     return 'no';
+//     // }
+// }
+// console.log(nextSqaure());    // no
+// console.log(nextSqaure(0));   // 1
+// console.log(nextSqaure(1));   // 4
+// console.log(nextSqaure(2));   // no
+// console.log(nextSqaure(3));   // no
+// console.log(nextSqaure(121)); // 144
+// console.log(nextSqaure(165)); // no
+// console.log(nextSqaure(400)); // 441
 
+22.
+// function waterMelon(n){
 
+//     var str = '';
+    
 
+//     for(var i = 1; i <= n; i++){
+//         console.log(i);
+//         // if(i === 1 && n === 1){
+//         //     return '수';
+//         // }
+//         // else if( i%2 === 0 ){
+//         //      str = str+'수박' ;
+//         //     }     
+//         //     // else if( i%2 === 1){
+//         //     //          str1+='수박';
+//         //     //         }
+//         //     //         str2 = str1+'수';
+//         //     //         return str2;
+                
+//         if(i%2 === 1){
+//             str += '수';
+//         }
+//         else if(i%2 === 0){
+//              str += '박';
+//         }
+    
+//     }
+    
+//             return str;
+//         // return str1;
+// }
+// console.log(waterMelon(5));
 
+23.
+function checkPalindrom(str) {
+    return str === str.split('').reverse().join('');
+    // console.log(str.split('').reverse().join(''));
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-(function printnow() {
-  var today = new Date();
-
-  var dayNames = ['(일요일)', '(월요일)', '(화요일)', '(수요일)', '(목요일)', '(금요일)', '(토요일)'];
-
-  var day = dayName[today.getDay()];
-
-  var year = today.getFullYear(), 
-      month = today.getMonth() +1,
-      date = today.getDate(),
-      hour = today.getHours(),
-      minute = today.getMinutes();
-      second = today.getSeconds();
-      ampm = hour >= 12 ? 'PM' : 'AM';
-
-      hour = hour % 12;
-      hour = hour ? hour : 12;
-})
+console.log(checkPalindrom('dad')); // true
+console.log(checkPalindrom('mom')); // true
+console.log(checkPalindrom('palindrom')); // false
+console.log(checkPalindrom('s')); // false
