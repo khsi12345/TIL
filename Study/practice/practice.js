@@ -333,12 +333,31 @@
 // console.log(waterMelon(5));
 
 23.
-function checkPalindrom(str) {
-    return str === str.split('').reverse().join('');
-    // console.log(str.split('').reverse().join(''));
-}
+// function checkPalindrom(str) {
+//     return str === str.split('').reverse().join('');
+//     // console.log(str.split('').reverse().join(''));
+// }
 
-console.log(checkPalindrom('dad')); // true
-console.log(checkPalindrom('mom')); // true
-console.log(checkPalindrom('palindrom')); // false
-console.log(checkPalindrom('s')); // false
+// console.log(checkPalindrom('dad')); // true
+// console.log(checkPalindrom('mom')); // true
+// console.log(checkPalindrom('palindrom')); // false
+// console.log(checkPalindrom('s')); // false
+
+24.
+function getMaxValueFromArray(array) {
+
+    return Math.max.apply(null, array)
+    // Math.max 인수중 가장 큰 수를 반환하는데, 인수가 배열인 상황이다.
+    // 배열인 인수를 해체해서 함수의 매개변수에 넣기 위해 apply 메소드를 사용했다.
+    // apply 메소드의 인자 값은 첫번째로 this가 될 대상으로 필수로 입력해야하며, 이 함수에서는 null로 주었다. 두번째로 Math.max가 사용 할 인수를 입력했다. 
+}
+console.log(getMaxValueFromArray([3, 6, -2, -5, 7, 3])); // 7
+
+function getMinValueFromArray(array) {
+
+    return Math.min.apply(null, array)
+    // Max.min 인수중 가장 작은 수를 반환하는데, 인수가 배열인 상황이다.
+    // 배열인 인수를 해체해서 함수의 매개변수에 넣기 위해 apply 메소드를 사용했다.
+    // apply 메소드의 인자 값은 첫번째로 this가 될 대상으로 필수로 입력해야하며, 이 함수에서는 null로 주었다. 두번째로 Math.max가 사용 할 인수를 입력했다. 
+}
+console.log(getMinValueFromArray([3, 6, -2, -5, 7, 3])); // -5
