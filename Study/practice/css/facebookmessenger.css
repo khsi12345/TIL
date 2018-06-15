@@ -152,3 +152,29 @@ p{
   padding: 0 24px;
   text-decoration: none;
 }
+.footer{
+  background-color: #323940;
+  padding: 20px 30px;
+  text-align: left;
+  overflow: hidden;
+}
+.footer-container{
+  text-align: center;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 1020px){
+.footer-container{
+  width: 960px;
+}
+}
+.footer-text{
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 13px;
+  line-height: 19px;
+  margin: 0;
+  text-align: left;
+}
+.footerlink{
+  color: white;
+  text-decoration: none;
+}
