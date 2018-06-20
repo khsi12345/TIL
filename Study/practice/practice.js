@@ -363,28 +363,45 @@
 // console.log(getMinValueFromArray([3, 6, -2, -5, 7, 3])); // -5
 
 25.
-var fizzBuzz = function(n) {
+// var fizzBuzz = function(n) {
    
-    var res = '';
-    for(var i = 1; i <= n; i++){
+//     var res = '';
+//     for(var i = 1; i <= n; i++){
         
-        if( i%3 === 0 && i%5 === 0){
+//         if( i%3 === 0 && i%5 === 0){
             
-            // console.log(i);
-            res += 'FizzBuzz';
-        }
-        else if( i%3 === 0 ){
-            res += 'Fizz';
-        }
-        else if( i%5 === 0){
-            res += 'Buzz';
-        }
-        else{
-            res += i;
-        }
-        res += ' ';
-    }
-    return res.trim().split(' ');
+//             // console.log(i);
+//             res += 'FizzBuzz';
+//         }
+//         else if( i%3 === 0 ){
+//             res += 'Fizz';
+//         }
+//         else if( i%5 === 0){
+//             res += 'Buzz';
+//         }
+//         else{
+//             res += i;
+//         }
+//         res += ' ';
+//     }
+//     return res.trim().split(' ');
     
-};
-console.log(fizzBuzz(15));
+// };
+// console.log(fizzBuzz(15));
+
+26.
+var hasAlternatingBits = function(n){
+  var res;
+  res = n.toString(2);
+  // console.log(res);
+  // console.log(typeof n);
+  
+  if(res.indexOf('11') > -1 || res.indexOf('00') > -1){
+    return false;
+  }
+  else{
+    return true;
+  }
+  
+}
+console.log(hasAlternatingBits(5));
