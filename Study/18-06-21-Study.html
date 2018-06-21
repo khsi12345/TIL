@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" placeholder="add-text">
+  <button class="add-btn">add</button>
+
+  <ul class="list">
+    <li><span>List1</span> <button>del</button></li>
+    <li><span>List2</span> <button>del</button></li>
+    <li><span>List3</span> <button>del</button></li>
+  </ul>
+
+  <script>
+    //리스트 요소를 가져온다.  
+    var list = document.querySelector('.list');
+    //input 요소를 가져온다.
+    var input = document.querySelector('input');
+    //버튼 요소를 가져온다.  
+    var addBtn = document.querySelector('.add-btn');
+    
+    addBtn.addEventListener('click', function(){
+
+      // console.log('click');
+      if( !input.value) return;
+      //input 요소의 value 값을 가져와서 innerHTML한다.
+      list.innerHTML += '<li><span>'+input.value+'</span> <button>del</button></li>'
+      //addBtn 클릭하면 list 요소에 input요소의 최신값이 들어간 후 input요소의 값을 지워준다.  
+      input.value = '';
+    });
+
+    input.addEventListener('keyup', function(e){
+
+      // console.log('enter', e.keyCode);
+      if( e.keyCode !== 13 || !input.value) return;
+      
+      
+      list.innerHTML += '<li><span>'+input.value+'</span> <button>del</button></li>'
+      input.value = '';
+    });
+    
+    list.addEventListener('click', function(e){
+
+      //이벤트 객체의 타겟(이벤트가 발생하는 대상)의 태그명을 확인한다.  
+      // console.log(e.target.nodeName);
+      //이벤트를 발생하는 요소의 태그명이 button이 아닐때 무시한다.  
+      if( e.target.nodeName !== 'BUTTON') return; 
+      
+      //부모요소가 자식요소를 지운다.
+      list.removeChild(e.target.parentNode);
+      
+    });
+
+    
+  </script>
+  
+</body>
+</html>
