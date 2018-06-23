@@ -7,56 +7,182 @@
   <title>Document</title>
 </head>
 <body>
-  <input type="text" placeholder="add-text">
-  <button class="add-btn">add</button>
 
-  <ul class="list">
-    <li><span>List1</span> <button>del</button></li>
-    <li><span>List2</span> <button>del</button></li>
-    <li><span>List3</span> <button>del</button></li>
-  </ul>
+    <input type="text" placeholder="enter todo">
+    <button class="add-btn">Add</button>
+  
+    <ul></ul>
+    <script>
+      var todos = [];
+  
+      var addBtn = document.querySelector('.add-btn');
+      var todoInput = document.querySelector('input');
+      var list = document.querySelector('ul');
+  
+      function addTodo(todo) {
+        if (!todo) return;
+        todos =  [ {id: maxId(), content: todoInput.value, completed: false} ].concat(todos);
+      }
 
-  <script>
-    //리스트 요소를 가져온다.  
-    var list = document.querySelector('.list');
-    //input 요소를 가져온다.
-    var input = document.querySelector('input');
-    //버튼 요소를 가져온다.  
-    var addBtn = document.querySelector('.add-btn');
+      function maxId(){
+         
+        var max = todos.map(function(todo){
+
+          return todo.id;
+        });
+         return todos.length ? Math.max.apply(null, max) + 1 : 1;
+      }
+
+      function getInnerhtml(){
+
+         list.innerHTML = '';
+
+         todos.forEach(function (todo) {
+          // console.log(todo.id);
+          var checked = todo.completed ? 'checked' : '';
+          list.innerHTML += '<li id ="' + todo.id + '"><input type="checkbox"' + checked + '><span>' + todo.content +'</span> <button>del</button></li>';
+        });
+      }
+  
+      addBtn.addEventListener('click', function () {
+        addTodo(todoInput.value);
+        todoInput.value = '';
+        
+        getInnerhtml();
+      });
+  
+      todoInput.addEventListener('keyup', function (e) {
+        if (e.keyCode !== 13) return;
+        addTodo(this.value);
+        this.value = '';
+        getInnerhtml();
+      });
+  
+      list.addEventListener('click', function (e) {
+   
+        // if (e.target.nodeName !== 'BUTTON') return;
+        
+        if(e.target.nodeName === 'BUTTON'){
+          todos =  todos.filter(function(todo){
+            return todo.id !== +e.target.parentNode.id;
+          }); 
+          console.log(todos);
+       
+        }
+        else if(e.target.nodeName === 'INPUT'){
+          todos = todos.map(function(todo){
+            return todo.id === +e.target.parentNode.id ? Object.assign({}, todo, {completed: !todo.completed}) : todo;
+          });
+          console.log(todos);
+        }
+        else{
+          return;
+        }
+     
+        
+        getInnerhtml();
+      });
+  
+      window.addEventListener('load', function () {
+        // 서버로부터 데이터를 취득
+        todos = [
+          { id: 1, content: 'HTML', completed: true },
+          { id: 2, content: 'CSS', completed: false },
+          { id: 300, content: 'JS', completed: true },
+          { id: 4, content: 'Angulae', completed: false }
+        ];
+  
+        // todos 배열을 사용하여 html을 생성하여 반영한다.
+        todos.forEach(function (todo) {
+          // console.log(todo.id);
+          var checked = todo.completed ? 'checked' : '';
+          list.innerHTML += '<li id ="' + todo.id + '"><input type="checkbox"' + checked + '><span>' + todo.content +'</span> <button>del</button></li>';
+        });
+      });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // <!-- <input type="text" placeholder="add-text">
+  // <button class="add-btn">add</button>
+
+  // <ul class="list">
+  // </ul>
+
+  // <script>
+  //   //리스트 요소를 가져온다.  
+  //   var list = document.querySelector('.list');
+  //   //input 요소를 가져온다.
+  //   var input = document.querySelector('input');
+  //   //버튼 요소를 가져온다.  
+  //   var addBtn = document.querySelector('.add-btn');
     
-    addBtn.addEventListener('click', function(){
+  //   addBtn.addEventListener('click', function(){
 
-      // console.log('click');
-      if( !input.value) return;
-      //input 요소의 value 값을 가져와서 innerHTML한다.
-      list.innerHTML += '<li><span>'+input.value+'</span> <button>del</button></li>'
-      //addBtn 클릭하면 list 요소에 input요소의 최신값이 들어간 후 input요소의 값을 지워준다.  
-      input.value = '';
-    });
+  //     // console.log('click');
+  //     if( !input.value) return;
+  //     //input 요소의 value 값을 가져와서 innerHTML한다.
+  //     list.innerHTML += '<li><span>'+input.value+'</span> <button>del</button></li>'
+  //     //addBtn 클릭하면 list 요소에 input요소의 최신값이 들어간 후 input요소의 값을 지워준다.  
+  //     input.value = '';
+  //   });
 
-    input.addEventListener('keyup', function(e){
+  //   input.addEventListener('keyup', function(e){
 
-      // console.log('enter', e.keyCode);
-      if( e.keyCode !== 13 || !input.value) return;
+  //     // console.log('enter', e.keyCode);
+  //     if( e.keyCode !== 13 || !input.value) return;
       
       
-      list.innerHTML += '<li><span>'+input.value+'</span> <button>del</button></li>'
-      input.value = '';
-    });
+  //     list.innerHTML += '<li><span>'+input.value+'</span> <button>del</button></li>'
+  //     input.value = '';
+  //   });
     
-    list.addEventListener('click', function(e){
+  //   list.addEventListener('click', function(e){
 
-      //이벤트 객체의 타겟(이벤트가 발생하는 대상)의 태그명을 확인한다.  
-      // console.log(e.target.nodeName);
-      //이벤트를 발생하는 요소의 태그명이 button이 아닐때 무시한다.  
-      if( e.target.nodeName !== 'BUTTON') return; 
+  //     //이벤트 객체의 타겟(이벤트가 발생하는 대상)의 태그명을 확인한다.  
+  //     // console.log(e.target.nodeName);
+  //     //이벤트를 발생하는 요소의 태그명이 button이 아닐때 무시한다.  
+  //     if( e.target.nodeName !== 'BUTTON') return; 
       
-      //부모요소가 자식요소를 지운다.
-      list.removeChild(e.target.parentNode);
+  //     //todos 배열에서 해당 요소를 삭제한다.  
+  //     // console.log(e.target.parentNode.id)
+  //     var todos = todos.filter(function(todo){
+  //       //todo.id는 넘버타입이고 e.target.parentNode.id는 돔에서 String타입으로 넘어온다.  
+  //       //그래서 e.target.parentNode.id를 넘버타입으로 변환하고 비교한다.  
+  //       return todo.id !== +e.target.parentNode.id;
+  //     });
+  //     //부모요소가 자식요소를 지운다.
+  //     // list.removeChild(e.target.parentNode);
       
-    });
-
+  //   });
     
+    
+
+  //   window.addEventListener('load', function(){
+      
+  //      todos = [
+  //       { id: 1, content: 'HTML', completed: true},
+  //       { id: 2, content: 'CSS', completed: false},
+  //       { id: 3, content: 'Javascript', completed: true}
+  //     ];
+    
+  //     // todos 배열을 사용하여 html을 생성하여 반영한다.
+  //   todos.forEach(function(todo){
+  //     var checked = todo.completed ? 'checked' : '';
+  //     list.innerHTML += '<li id="' + todo.id +'"><input type="checkbox"' + checked + '><span>'+todo.content+'</span> <button>del</button></li>'
+  //   });
+
+  //   }); -->
   </script>
   
 </body>
