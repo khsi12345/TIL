@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Todo</title>
+</head>
+<body>
+  <input type="text">
+  <button class="add-btn">add</button>
+  <ul></ul>
+
+  <script>
+    var todos = [];
+    var addBtn = document.querySelector('.add-btn');
+    var todoInput = document.querySelector('input');
+    var list = document.querySelector('ul');
+
+    function getInnerHTML(){
+      todos.forEach(function(todo){
+
+        var checked = todo.completed ? 'checked' : '';
+        list.innerHTML += '<li id= '+ todo.id +'><input type= "checkbox"' + checked + '><span>' + todo.content + '</span> <button>del</button></li>';
+      });
+    }
+    window.addEventListener('load', function(){
+
+      todos = [
+        {id: 1, content: 'HTML', completed: true},
+        {id: 2, content: 'CSS', completed: false},
+        {id: 3, content: 'JS', completed: true},
+        {id: 4, content: 'ANGULER', completed: false}
+      ];
+
+      getInnerHTML();
+    });
+    
+    //사용자가 입력한 값을 맨 선두에 연결(추가)하겠다.
+    function addTodo(todo){
+      //입력값이 없을때 실행 안한다.
+      if(!todo) return;
+      //사용자가 입력한 값을 객체로 해서 todos의 선두에 추가하겠다.
+      todos = [{id: maxId(), content: todoInput.value, completed: false}].concat(todos);
+    }
+
+    function maxId(){
+
+      var todosId = todos.map(function(todo){
+        return todo.id;
+      });
+      return todos.length ? Math.max.apply(null, todosId) + 1 : 1;
+    }
+
+    addBtn.addEventListener('click', function(){
+
+      //사용자가 입력한 값을 맨 선두에 연결(추가)하겠다.
+      addTodo(todoInput.value);
+      todoInput.value = '';
+      list.innerHTML = '';
+      getInnerHTML();
+    }); 
+
+    todoInput.addEventListener('keyup', function(e){
+      if(e.keyCode === 13){
+        //사용자가 입력한 값을 맨 선두에 연결(추가)하겠다.
+      addTodo(todoInput.value);
+      todoInput.value = '';
+      list.innerHTML = '';
+      getInnerHTML();
+
+      }
+    });
+
+    list.addEventListener('click', function(e){
+
+      if(e.target.nodeName === 'BUTTON'){
+      todos = todos.filter(function(todo){
+        // console.log(e.target)
+        return todo.id !== +e.target.parentNode.id;
+      });
+    }
+      else if(e.target.nodeName === 'INPUT'){
+        todos = todos.map(function(todo){
+         
+         return todo.id === +e.target.parentNode.id ? Object.assign({}, todo, {completed: !todo.completed}) : todo;
+        });
+      }
+      list.innerHTML = '';
+      getInnerHTML();
+    });
+
+
+  </script>
+  
+</body>
+</html>
